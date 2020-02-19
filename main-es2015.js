@@ -178,7 +178,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-card class=\"example-card\">\r\n  <mat-card-header  color=\"primary\">\r\n     <div mat-card-avatar class=\"example-header-image\"></div>\r\n     <mat-card-title>Giyani Dialysis - System Registration</mat-card-title>\r\n </mat-card-header>\r\n <!-- <img mat-card-image src=\"assets/images/home/home_2.jpg\" alt=\"Photo of a Shiba Inu\"> -->\r\n <mat-card-content>\r\n     <div *ngIf=\"isLoginError\" class=\"red-text center error-message\">\r\n         <i class=\"material-icons\">error</i> Incorrect username or password\r\n     </div>\r\n     <form #loginForm=\"ngForm\" class=\"col s12 white\" (ngSubmit)=\"OnSubmit(UserName.value,Password.value)\">\r\n        <div class=\"input-field-class\">\r\n\r\n          <div class=\"row\">\r\n            <mat-form-field  class=\"col s4\">\r\n              <mat-label>First name</mat-label>\r\n              <input matInput placeholder=\"First Name\" #FirstName ngModel name=\"FirstName\">\r\n              <mat-icon matPrefix>person_outline</mat-icon>\r\n            </mat-form-field>\r\n            <mat-form-field class=\"col s4\">\r\n              <mat-label>Last name</mat-label>\r\n              <input matInput placeholder=\"Last Name\" #LastName ngModel name=\"LastName\">\r\n              <mat-icon matPrefix>person_outline</mat-icon>\r\n            </mat-form-field>\r\n          </div>\r\n\r\n          <div class=\"row\">\r\n            <mat-form-field  class=\"col s4\">\r\n              <mat-label>Initials</mat-label>    \r\n              <input matInput placeholder=\"Initials\" #Initials ngModel name=\"Initials\">\r\n              <mat-icon matPrefix>person_outline</mat-icon>\r\n            </mat-form-field>\r\n          </div>\r\n\r\n          <div class=\"row\">\r\n            <mat-form-field class=\"col s4\">\r\n              <mat-label>Email Address</mat-label>      \r\n              <input matInput (keyup)=\"applyFilter($event.target.value)\"  placeholder=\"Username\" #Initials ngModel name=\"Email\">\r\n              <mat-icon matPrefix>mail</mat-icon>\r\n            </mat-form-field>\r\n          </div>\r\n\r\n          <div class=\"row\">\r\n            <mat-form-field  class=\"col s4\">\r\n              <mat-label>Account Password</mat-label> \r\n              <input type=\"password\" matInput placeholder=\"Password\" #UserName ngModel name=\"Password\">\r\n              <mat-icon matPrefix>enhanced_encryption</mat-icon>\r\n            </mat-form-field>\r\n            <mat-form-field class=\"col s4\">\r\n              <input type=\"password\" matInput placeholder=\"Confirm Password\" #Password ngModel name=\"ConfirmPassword\" placeholder=\"Confirm Password\">\r\n            </mat-form-field>\r\n          </div>\r\n\r\n          <div class=\"row s12\">\r\n            <button color=\"primary\" mat-raised-button>Sign - UP</button>\r\n          </div>\r\n        </div>\r\n     </form>\r\n </mat-card-content>\r\n</mat-card>\r\n\r\n<!-- <form class=\"col m12 white\" #userRegistrationForm=\"ngForm\" (ngSubmit)=\"OnSubmit(userRegistrationForm)\">  \r\n  <div class=\"row\">\r\n    <div class=\"input-field col m12\">\r\n      <input class=\"validate\" type=\"text\" name=\"UserName\" #UserName=\"ngModel\" [(ngModel)]=\"user.UserName\" required>\r\n      <label data-error=\"Required field!\">UserName</label>\r\n    </div>\r\n    <div class=\"input-field col s6\">\r\n      <input class=\"validate\" type=\"password\" name=\"Password\" #Password=\"ngModel\" [(ngModel)]=\"user.Password\" required minlength=\"3\">\r\n      <label [attr.data-error]=\"Password.errors!=null?(Password.errors.required?'Required field!':'Minimum 3 characters needed'):''\">Password</label>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"input-field col s12\">\r\n      <input class=\"validate\" type=\"text\" name=\"Email\" #Email=\"ngModel\" [(ngModel)]=\"user.Email\" [pattern]=\"emailPattern\">\r\n      <label data-error=\"Invalid email!\">Email</label>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"input-field col s6\">\r\n      <input type=\"text\" name=\"FirstName\" #FirstName=\"ngModel\" [(ngModel)]=\"user.FirstName\">\r\n      <label>First Name</label>\r\n    </div>\r\n    <div class=\"input-field col s6\">\r\n      <input type=\"text\" name=\"LastName\" #LastName=\"ngModel\" [(ngModel)]=\"user.LastName\">\r\n      <label>Last Name</label>\r\n    </div>\r\n  </div>\r\n  <mat-form-field>\r\n                          <textarea matInput placeholder=\"Textarea\"></textarea>\r\n                        </mat-form-field>\r\n                      \r\n                        <mat-form-field>\r\n                            <mat-select placeholder=\"Select\">\r\n                              <mat-option value=\"option\">Option</mat-option>\r\n                            </mat-select>\r\n                          </mat-form-field>\r\n\r\n  <div class=\"row\">\r\n    <div class=\"input-field col s12\">\r\n      <button [disabled]=\"!userRegistrationForm.valid\" class=\"btn-large btn-submit\" type=\"submit\">Submit</button>\r\n    </div>\r\n  </div>\r\n</form> -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-card class=\"example-card\">\r\n  <mat-card-header  color=\"primary\">\r\n     <div mat-card-avatar class=\"example-header-image\"></div>\r\n     <mat-card-title>Giyani Dialysis - System Registration</mat-card-title>\r\n </mat-card-header>\r\n <!-- <img mat-card-image src=\"assets/images/home/home_2.jpg\" alt=\"Photo of a Shiba Inu\"> -->\r\n <mat-card-content>\r\n  <div *ngIf=\"isRegistrationError\" class=\"red-text center error-message\">\r\n      <i class=\"material-icons\">error</i> Incorrect username or password\r\n  </div>\r\n  <form [formGroup]=\"GiyaniRegForm\" autocomplete=\"off\" class=\"col-12 white\" >\r\n     <div class=\"input-field-class\">\r\n\r\n       <div class=\"row\">\r\n         <mat-form-field  class=\"col s4\">\r\n           <mat-label>First name</mat-label>\r\n           <input matInput placeholder=\"First Name\" #firstName ngModel formControlName=\"firstName\"  (blur)=\"logValidationErrors()\">\r\n           <mat-icon matPrefix>person_outline</mat-icon>\r\n           <mat-error *ngIf=\"formErrors.firstName\"><b>{{formErrors.firstName}}</b></mat-error>\r\n         </mat-form-field>\r\n         <mat-form-field class=\"col s4\">\r\n           <mat-label>Last name</mat-label>\r\n           <input matInput placeholder=\"Last Name\" #lastName ngModel formControlName=\"lastName\" (blur)=\"logValidationErrors()\">\r\n           <mat-icon matPrefix>person_outline</mat-icon>\r\n           <mat-error *ngIf=\"formErrors.lastName\"><b>{{formErrors.lastName}}</b></mat-error>\r\n         </mat-form-field>\r\n       </div>\r\n\r\n       <div class=\"row\">\r\n         <mat-form-field  class=\"col s4\">\r\n           <mat-label>Initials</mat-label>    \r\n           <input matInput placeholder=\"Initials\" #Initials ngModel formControlName=\"Initials\">\r\n           <mat-icon matPrefix>person_outline</mat-icon>\r\n         </mat-form-field>\r\n       </div>\r\n\r\n       <div class=\"row\">\r\n         <mat-form-field class=\"col s4\">\r\n           <mat-label>Email Address</mat-label>      \r\n           <input matInput placeholder=\"Email address\" #emailAddress ngModel formControlName=\"emailAddress\" (blur)=\"logValidationErrors()\">\r\n           <mat-icon matPrefix>mail</mat-icon>\r\n           <mat-error *ngIf=\"formErrors.emailAddress\"><b>{{formErrors.emailAddress}}</b></mat-error>\r\n         </mat-form-field>\r\n       </div>\r\n\r\n       <div class=\"row\">\r\n           <div formGroupName=\"passwordGroup\">\r\n             <mat-form-field  class=\"col s4\">\r\n               <mat-label>Account Password</mat-label> \r\n               <input type=\"password\" matInput placeholder=\"Password\" #password ngModel formControlName=\"password\" (blur)=\"logValidationErrors()\">\r\n               <mat-icon matPrefix>enhanced_encryption</mat-icon>\r\n               <mat-error *ngIf=\"formErrors.password\"><b>{{formErrors.password}}</b></mat-error>\r\n             </mat-form-field> \r\n             <mat-form-field class=\"col s4\">\r\n               <mat-label>Confirm Password</mat-label> \r\n               <input type=\"password\" matInput placeholder=\"Confirm-Password\" #confirmPassword ngModel formControlName=\"confirmPassword\" (blur)=\"logValidationErrors()\">\r\n               <mat-icon matPrefix>enhanced_encryption</mat-icon>\r\n               <mat-error *ngIf=\"formErrors.confirmPassword || formErrors.passwordGroup\">\r\n                 <b>{{formErrors.confirmPassword ? formErrors.confirmPassword : formErrors.passwordGroup}}</b>\r\n               </mat-error>\r\n             </mat-form-field>\r\n           </div>\r\n       </div>\r\n\r\n       <div class=\"row s12\">\r\n         <button color=\"primary\" mat-raised-button>Sign - UP</button>\r\n       </div>\r\n     </div>\r\n  </form>\r\n</mat-card-content>\r\n</mat-card>\r\n\r\n<!-- <form class=\"col m12 white\" #userRegistrationForm=\"ngForm\" (ngSubmit)=\"OnSubmit(userRegistrationForm)\">  \r\n  <div class=\"row\">\r\n    <div class=\"input-field col m12\">\r\n      <input class=\"validate\" type=\"text\" name=\"UserName\" #UserName=\"ngModel\" [(ngModel)]=\"user.UserName\" required>\r\n      <label data-error=\"Required field!\">UserName</label>\r\n    </div>\r\n    <div class=\"input-field col s6\">\r\n      <input class=\"validate\" type=\"password\" name=\"Password\" #Password=\"ngModel\" [(ngModel)]=\"user.Password\" required minlength=\"3\">\r\n      <label [attr.data-error]=\"Password.errors!=null?(Password.errors.required?'Required field!':'Minimum 3 characters needed'):''\">Password</label>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"input-field col s12\">\r\n      <input class=\"validate\" type=\"text\" name=\"Email\" #Email=\"ngModel\" [(ngModel)]=\"user.Email\" [pattern]=\"emailPattern\">\r\n      <label data-error=\"Invalid email!\">Email</label>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"input-field col s6\">\r\n      <input type=\"text\" name=\"FirstName\" #FirstName=\"ngModel\" [(ngModel)]=\"user.FirstName\">\r\n      <label>First Name</label>\r\n    </div>\r\n    <div class=\"input-field col s6\">\r\n      <input type=\"text\" name=\"LastName\" #LastName=\"ngModel\" [(ngModel)]=\"user.LastName\">\r\n      <label>Last Name</label>\r\n    </div>\r\n  </div>\r\n  <mat-form-field>\r\n                          <textarea matInput placeholder=\"Textarea\"></textarea>\r\n                        </mat-form-field>\r\n                      \r\n                        <mat-form-field>\r\n                            <mat-select placeholder=\"Select\">\r\n                              <mat-option value=\"option\">Option</mat-option>\r\n                            </mat-select>\r\n                          </mat-form-field>\r\n\r\n  <div class=\"row\">\r\n    <div class=\"input-field col s12\">\r\n      <button [disabled]=\"!userRegistrationForm.valid\" class=\"btn-large btn-submit\" type=\"submit\">Submit</button>\r\n    </div>\r\n  </div>\r\n</form> -->");
 
 /***/ }),
 
@@ -486,7 +486,7 @@ AppModule = __decorate([
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"].withServerTransition({ appId: 'ng-cli-universal' }),
             _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], _material_material_module__WEBPACK_IMPORTED_MODULE_15__["MaterialModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_13__["AppRoutingModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_14__["FlexLayoutModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_13__["AppRoutingModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_14__["FlexLayoutModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], ngx_toastr__WEBPACK_IMPORTED_MODULE_19__["ToastrModule"].forRoot()
         ],
         providers: [_shared_User_Service_user_service__WEBPACK_IMPORTED_MODULE_20__["UserService"]],
@@ -1278,7 +1278,7 @@ SignInComponent = __decorate([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("::ng-deep .mat-card-header{\r\n    background-color: #16177e !important;\r\n    color: white;\r\n    padding:5px !important;\r\n  }\r\n  \r\n  ::ng-deep .mat-card{\r\n    padding:0 !important;\r\n  }\r\n  \r\n  ::ng-deep .mat-card-content{\r\n    padding:5px !important;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci9zaWduLXVwL3NpZ24tdXAuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG9DQUFvQztJQUNwQyxZQUFZO0lBQ1osc0JBQXNCO0VBQ3hCOztFQUVBO0lBQ0Usb0JBQW9CO0VBQ3RCOztFQUVBO0lBQ0Usc0JBQXNCO0VBQ3hCIiwiZmlsZSI6InNyYy9hcHAvdXNlci9zaWduLXVwL3NpZ24tdXAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIjo6bmctZGVlcCAubWF0LWNhcmQtaGVhZGVye1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzE2MTc3ZSAhaW1wb3J0YW50O1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgcGFkZGluZzo1cHggIWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgOjpuZy1kZWVwIC5tYXQtY2FyZHtcclxuICAgIHBhZGRpbmc6MCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICA6Om5nLWRlZXAgLm1hdC1jYXJkLWNvbnRlbnR7XHJcbiAgICBwYWRkaW5nOjVweCAhaW1wb3J0YW50O1xyXG4gIH0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("::ng-deep .mat-card-header{\r\n    background-color: #16177e !important;\r\n    color: white;\r\n    padding:5px !important;\r\n  }\r\n  \r\n  ::ng-deep .mat-card{\r\n    padding:0 !important;\r\n  }\r\n  \r\n  ::ng-deep .mat-card-content{\r\n    padding:5px !important;\r\n  }\r\n  \r\n  .mat-form-field{\r\n    margin: 10px;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci9zaWduLXVwL3NpZ24tdXAuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG9DQUFvQztJQUNwQyxZQUFZO0lBQ1osc0JBQXNCO0VBQ3hCOztFQUVBO0lBQ0Usb0JBQW9CO0VBQ3RCOztFQUVBO0lBQ0Usc0JBQXNCO0VBQ3hCOztFQUVBO0lBQ0UsWUFBWTtFQUNkIiwiZmlsZSI6InNyYy9hcHAvdXNlci9zaWduLXVwL3NpZ24tdXAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIjo6bmctZGVlcCAubWF0LWNhcmQtaGVhZGVye1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzE2MTc3ZSAhaW1wb3J0YW50O1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgcGFkZGluZzo1cHggIWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgOjpuZy1kZWVwIC5tYXQtY2FyZHtcclxuICAgIHBhZGRpbmc6MCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICA6Om5nLWRlZXAgLm1hdC1jYXJkLWNvbnRlbnR7XHJcbiAgICBwYWRkaW5nOjVweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuXHJcbiAgLm1hdC1mb3JtLWZpZWxke1xyXG4gICAgbWFyZ2luOiAxMHB4O1xyXG4gIH0iXX0= */");
 
 /***/ }),
 
@@ -1294,7 +1294,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignUpComponent", function() { return SignUpComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_shared_User_Service_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/User-Service/user.service */ "./src/app/shared/User-Service/user.service.ts");
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1310,25 +1311,107 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
 let SignUpComponent = class SignUpComponent {
-    constructor(userService, toastr) {
+    constructor(userService, toastr, fb) {
         this.userService = userService;
         this.toastr = toastr;
+        this.fb = fb;
         this.emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+        // This object will hold the messages to be displayed to the user
+        // Notice, each key in this object has the same name as the
+        // corresponding form control
+        this.formErrors = {
+            'firstName': '',
+            'lastName': '',
+            'emailAddress': '',
+            'password': '',
+            'confirmPassword': '',
+            'passwordGroup': '',
+        };
+        // This object contains all the validation messages for this form
+        this.validationMessages = {
+            'firstName': {
+                'required': 'First name is required.',
+                'minlength': 'First name must be greater than 2 characters.',
+                'maxlength': 'First name must be less than 100 characters.'
+            },
+            'lastName': {
+                'required': 'Last name is required.',
+                'minlength': 'Last name must be greater than 2 characters.',
+                'maxlength': 'Last name must be less than 100 characters.'
+            },
+            'emailAddress': {
+                'required': 'Email is required.',
+                'minlength': 'Email address must be greater than 11 characters.',
+                'maxlength': 'Email address must be less than 150 characters.',
+                'emailDomain': 'Email domian should be devine-tech.com'
+            },
+            'password': {
+                'required': 'Password is required.',
+                'minlength': 'Password must be greater than 5 characters.',
+                'maxlength': 'Password must be less than 150 characters.',
+            },
+            'confirmPassword': {
+                'required': 'Confirm Password is required.',
+                'minlength': 'Confirm Password must be greater than 5 characters.',
+                'maxlength': 'Confirm Password must be less than 150 characters.',
+            },
+            'passwordGroup': {
+                'passwordMisMatch': 'Password and confirm Password do not match'
+            }
+        };
+        this.hasError = (controlName, errorName) => {
+            return this.GiyaniRegForm.controls[controlName].hasError(errorName);
+        };
     }
     ngOnInit() {
-        this.resetForm();
+        this.GiyaniRegForm = this.fb.group({
+            firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(60)]),
+            lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(2), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(60)]),
+            Initials: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(60)]),
+            emailAddress: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(11), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(150)]),
+            passwordGroup: this.fb.group({
+                password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(60)]],
+                confirmPassword: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(60)],
+            }, { validators: matchPassword }),
+        });
+        this.GiyaniRegForm.valueChanges.subscribe((data) => {
+            this.logValidationErrors(this.GiyaniRegForm);
+        });
     }
-    resetForm(form) {
-        if (form != null)
-            form.reset();
-        this.user = {
-            UserName: '',
-            Password: '',
-            Email: '',
-            FirstName: '',
-            LastName: ''
-        };
+    // Logs validation error messages
+    logValidationErrors(group = this.GiyaniRegForm) {
+        Object.keys(group.controls).forEach((key) => {
+            const abstractControl = group.get(key);
+            this.formErrors[key] = '';
+            // Loop through nested form groups and form controls to check
+            // for validation errors. For the form groups and form controls
+            // that have failed validation, retrieve the corresponding
+            // validation message from validationMessages object and store
+            // it in the formErrors object. The UI binds to the formErrors
+            // object properties to display the validation errors.
+            if (abstractControl && !abstractControl.valid
+                && (abstractControl.touched || abstractControl.dirty)) {
+                const messages = this.validationMessages[key];
+                for (const errorKey in abstractControl.errors) {
+                    if (errorKey) {
+                        this.formErrors[key] += messages[errorKey] + ' ';
+                    }
+                }
+            }
+            if (abstractControl instanceof _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]) {
+                this.logValidationErrors(abstractControl);
+            }
+            // if (abstractControl instanceof FormArray) {
+            //   for( const control of abstractControl.controls)
+            //   {
+            //     if (control instanceof FormGroup) {
+            //       this.logValidationErrors(control);
+            //     }
+            //   }
+            // }
+        });
     }
     OnSubmit(form) {
         this.userService.registerUser(form.value)
@@ -1341,10 +1424,22 @@ let SignUpComponent = class SignUpComponent {
                 this.toastr.error(data.Errors[0]);
         });
     }
+    resetForm(form) {
+        if (form != null)
+            form.reset();
+        this.user = {
+            UserName: '',
+            Password: '',
+            Email: '',
+            FirstName: '',
+            LastName: ''
+        };
+    }
 };
 SignUpComponent.ctorParameters = () => [
     { type: src_app_shared_User_Service_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"] },
-    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastrService"] }
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
 ];
 SignUpComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1352,9 +1447,22 @@ SignUpComponent = __decorate([
         template: __importDefault(__webpack_require__(/*! raw-loader!./sign-up.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/user/sign-up/sign-up.component.html")).default,
         styles: [__importDefault(__webpack_require__(/*! ./sign-up.component.css */ "./src/app/user/sign-up/sign-up.component.css")).default]
     }),
-    __metadata("design:paramtypes", [src_app_shared_User_Service_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastrService"]])
+    __metadata("design:paramtypes", [src_app_shared_User_Service_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
 ], SignUpComponent);
 
+function matchPassword(group) {
+    const passwordControl = group.get('password');
+    const confirmPasswordControl = group.get('confirmPassword');
+    console.log("Valuie of password is : " + passwordControl.value + " and confirm Password : " + confirmPasswordControl.value);
+    if (passwordControl.value === confirmPasswordControl.value || confirmPasswordControl.pristine) {
+        console.log("Matched");
+        return null;
+    }
+    else {
+        console.log("Mis-Matched");
+        return { 'passwordMisMatch': true };
+    }
+}
 
 
 /***/ }),
